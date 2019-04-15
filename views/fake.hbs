@@ -1,0 +1,46 @@
+<style>
+    textarea#styled  {
+        width: 1024px;
+        height: 738px;
+        padding: 25px;
+        padding-top: 100px;
+        font-size: 100px;
+        color: whitesmoke;
+        background-image: url(/fun//Bart-With-Black-Board.jpg);
+        background-position: center top;
+    }
+</style>
+<script language="javascript">
+    // code from JOHN CHACKO
+    let a=[' ','난', ' ', '바', '보', ' ', '멍', '청', '이', ' ', '입', '니', '다', '!'],n="";
+    function tricky()
+    {
+        var tt=document.f.fun_textarea.value.length;
+        var j=tt;
+        if(j>0) {
+            for(var i=1;i<=j;i++) {
+                n=n+a[i];
+                if(i==14)
+                {
+                    document.f.fun_textarea.value="";
+                    n="";
+                }
+            }
+        }
+        document.f.fun_textarea.value=n;
+        n="";
+        setTimeout("tricky()",1);
+    }
+    function bodyLoad()
+    {
+        tricky()
+    }
+</script>
+</head>
+<body onload="bodyLoad()">
+<h2>Type anthing slowly</h2>
+<form name="f"><textarea name="fun_textarea" cols="20" rows="5" id="styled">
+</textarea>
+</form>
+</body>
+</html
